@@ -4,3 +4,6 @@
 - task: AzurePowerShell@5
   inputs:
     ScriptType: 'FilePath'
+- task: AndroidSigning@3
+  inputs:
+    apkFiles: '**/*.apk'
