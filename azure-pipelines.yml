@@ -1,3 +1,6 @@
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
+- task: AzurePowerShell@5
+  inputs:
+    ScriptType: 'FilePath'
