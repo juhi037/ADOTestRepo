@@ -1,9 +1,19 @@
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'build'
-- task: AzurePowerShell@5
-  inputs:
-    ScriptType: 'FilePath'
-- task: AndroidSigning@3
-  inputs:
-    apkFiles: '**/*.apk'
+resources:
+  repositories:
+    - repository: GithubRepo
+      type: github
+      endpoint: github.com_juhi037
+      name: juhi037/ADOTestRepo
+
+    - repository: azurerepos
+      type: git
+      name: RepoWithSecrets
+
+
+trigger:
+- main
+
+
+pool:
+  vmImage: 'ubuntu-latest'
+
