@@ -3,7 +3,7 @@ resources:
     - repository: GithubRepo
       type: github
       endpoint: github.com_juhi037
-      name: juhi037/ADOTestRepo
+      name: juhi037/ADOTestRepoNew
 
     - repository: azurerepos
       type: git
