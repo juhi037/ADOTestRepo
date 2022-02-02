@@ -1,0 +1,41 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+- HackerBranch
+
+pr:
+ - main
+ - master
+
+resources:
+  repositories:
+    - repository: ADOTestRepoNew
+      type: Github
+      endpoint: YAMLHacksSvcConn
+      name: juhi037/ADOTestRepoNew
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+- checkout: ADOTestRepoNew
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
+
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: 'debug.log'
+    retryCount: 5
