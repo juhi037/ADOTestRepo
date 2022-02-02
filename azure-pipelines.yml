@@ -7,16 +7,15 @@ resources:
 
     - repository: azurerepos
       type: git
-      name: RepoWithSecrets
+      name: RepoWithSecret
 
 
 trigger:
 - main
 
 
-pool:
-  vmImage: 'ubuntu-latest'
 
 
 steps:
 - checkout: GithubRepo
+
